@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Flower{
+
+        }
+        //刘杨宝 对象 object 数据类型
+        //描述性很强的语言
+        // 对象字面量
+        const lyb = {
+            name:'劉楊寶',
+            sex: '男',/*属性.字符串常量*/
+            isSingle: true,/*布尔型*/
+            hometown: '赣州',
+            age: 20,/*数值型*/
+            job_sity: undefined,
+            girl: null,/*为空*/
+            hobbies: ['游戏', '代码'],
+            sendFlower: function (receiver) {//功能
+                //送花的对象
+                //花的实例 11
+                let flower = new Flower('紅玫瑰',11);
+                    //把花送給她
+                    // talk in js uml 
+                    receiver.receiverFlower(lyb,flower);
+        }
+            /* Symbol */
+            /*方法*/
+        };
+
+        const xm = {
+            name:'小美',
+            receiverFlower:function(){
+                console.log('收到了花')
+            }
+        }
+
+        
+        //高級代碼
+        const xh = {
+            name : '小紅',
+            //代理模式
+            hometown: '贛州',
+            // 接口
+            receiverFlower:function(sender,flower){
+                if(sender.name == '劉楊寶'){
+                    // console.log('男神，滾遠點');
+                    console.log('請幫我轉送一下')
+                    xm.receiverFlower(sender,flower);
+                }else{
+                    console.log('收到了花');
+                }
+            }
+        }
+        lyb.sendFlower(xh);
+    </script>
+</body>
+
+</html>
